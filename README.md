@@ -18,7 +18,7 @@ The project is decomposed in a few Jupyter notebooks which need to be run in a s
 
 1. `twitter_miner.ipynb`: This notebook is used to gather a dataset for a given Twitter user. It needs access to Twitter's API. A list of user ids gained through tools like `nucoll` and `Gephi` can be specified.  
 
-2. `embedding.ipynb`: Here, a word2vec word embedding using `gensim` is trained on the previously downloaded data. It is used later on in machine learning models.  
+2. `embedding.ipynb`: Here, a word2vec word embedding using `gensim` is trained on the previously downloaded data. It is used later on in machine learning models. Due to incompatibilities between `numpy` and `gensim`, this notebook needs a different environment than the others.  
 
 3. `classifier.ipynb`: This notebook is used to train a binary classifier in order to predict whether a tweet may be considered "good" or "bad". The classification is necessary due to the multimodal nature of the transformed ratings (see Problems section).  
 
