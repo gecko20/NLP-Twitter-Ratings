@@ -36,7 +36,7 @@ The problems encountered during the experiments show that this is not as trivial
 
 ### Problems
 The first problem was the distribution of the data (amount of likes, retweets, ...). Due to their log-normal distribution, regression directly on those data failed since it always predicted the used metric's mean.  
-This problem was solved by transforming the data via the "Boxcox" procedure so that it approximates a normal distribution as is needed for regression. But transforming the data in such a way led to bimodal distributions with which regression also doesn't seem to be possible. The used regression models always predicted the "center" between both peaks.  
+This problem was solved by transforming the data via a quantile transformation so that it approximates a normal distribution as is needed for regression. But transforming the data in such a way led to bimodal distributions with which regression also doesn't seem to be possible. The used regression models always predicted the "center" between both peaks.  
 Therefore, the data needed to be "classified", i.e. put into one of two bins, each representing one peak of the bimodal distribution before attempting to run regression on the data.
 Two regressors had to be trained - one for each peak. The results seem to show that this helped with the aforementioned problem of the regressor stubbornly predicting either the mean or the "center" between both peaks.  
 
